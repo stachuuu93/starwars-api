@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @ObjectType()
 export class Character {
   @PrimaryGeneratedColumn()
-  @Field((type) => Int)
+  @Field(() => Int)
   id: number;
 
   @Column()
@@ -13,11 +13,11 @@ export class Character {
   name: string;
 
   @Column()
-  @Field((type) => Int)
+  @Field(() => Int)
   height: number;
 
   @Column()
-  @Field((type) => Int)
+  @Field(() => Int)
   mass: number;
 
   @Column()

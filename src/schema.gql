@@ -12,10 +12,13 @@ type Character {
 
 type Query {
   characters: [Character!]!
+  character(id: Int!): Character!
 }
 
 type Mutation {
   createCharacter(createCharacterInput: CreateCharacterInput!): Character!
+  updateCharacter(updateCharacterInput: UpdateCharacterInput!): Character!
+  removeCharacter(id: Int!): Character!
 }
 
 input CreateCharacterInput {
@@ -23,4 +26,11 @@ input CreateCharacterInput {
   height: Int!
   mass: Int!
   gender: String!
+}
+
+input UpdateCharacterInput {
+  id: Int!
+  height: Int
+  mass: Int
+  gender: String
 }
