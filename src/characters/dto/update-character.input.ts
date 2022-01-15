@@ -1,23 +1,9 @@
-import { Field, InputType, Int } from '@nestjs/graphql';
+import { Field, InputType, Int, PartialType } from '@nestjs/graphql';
 import { IsIn, IsOptional, IsPositive } from 'class-validator';
+import { CreateCharacterInput } from './create-character.input';
 
 @InputType()
-export class UpdateCharacterInput {
+export class UpdateCharacterInput extends PartialType(CreateCharacterInput) {
   @Field(() => Int)
   id: number;
-
-  @IsOptional()
-  @IsPositive()
-  @Field(() => Int, { nullable: true })
-  height?: number;
-
-  @IsOptional()
-  @IsPositive()
-  @Field(() => Int, { nullable: true })
-  mass?: number;
-
-  @IsOptional()
-  @IsIn(['male', 'female'])
-  @Field({ nullable: true })
-  gender?: 'male' | 'female';
 }

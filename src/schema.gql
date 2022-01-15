@@ -30,8 +30,9 @@ input CreateCharacterInput {
 }
 
 input UpdateCharacterInput {
-  id: Int!
+  name: String
   height: Int
   mass: Int
   gender: String
+  id: Int!
 }
