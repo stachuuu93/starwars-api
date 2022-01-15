@@ -13,3 +13,14 @@ type Character {
 type Query {
   characters: [Character!]!
 }
+
+type Mutation {
+  createCharacter(createCharacterInput: CreateCharacterInput!): Character!
+}
+
+input CreateCharacterInput {
+  name: String!
+  height: Int!
+  mass: Int!
+  gender: String!
+}
