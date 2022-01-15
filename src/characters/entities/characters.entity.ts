@@ -8,7 +8,7 @@ export class Character {
   @Field(() => Int)
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   @Field()
   name: string;
 
