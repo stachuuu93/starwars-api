@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CharactersModule } from './characters/characters.module';
+import { StarshipsModule } from './starships/starships.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { CharactersModule } from './characters/characters.module';
       synchronize: true,
     }),
     CharactersModule,
+    StarshipsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

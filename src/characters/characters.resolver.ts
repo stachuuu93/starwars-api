@@ -5,7 +5,7 @@ import { CharactersService } from './characters.service';
 import { CreateCharacterInput } from './dto/create-character.input';
 import { UpdateCharacterInput } from './dto/update-character.input';
 
-@Resolver((of) => Character)
+@Resolver(() => Character)
 export class CharactersResolver {
   constructor(private charactersService: CharactersService) {}
 
