@@ -19,6 +19,11 @@ export class CharactersResolver {
     return this.charactersService.findOne(id);
   }
 
+  @Query(() => Character)
+  pickRandomCharacter(): Promise<Character> {
+    return this.charactersService.pickRandom();
+  }
+
   @Mutation(() => Character)
   createCharacter(
     @Args('createCharacterInput') createCharacterInput: CreateCharacterInput,

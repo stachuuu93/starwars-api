@@ -38,4 +38,12 @@ export class CharactersService {
     const character = await this.charactersRepository.findOneOrFail(id);
     return this.charactersRepository.remove(character);
   }
+
+  pickRandom(): Promise<Character> {
+    return this.charactersRepository
+      .createQueryBuilder()
+      .orderBy('RANDOM()')
+      .limit(1)
+      .getOne();
+  }
 }
