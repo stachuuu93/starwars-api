@@ -7,7 +7,7 @@ type Character {
   name: String!
   height: Int!
   mass: Int!
-  gender: String!
+  iq: Int!
   imageUrl: String!
 }
 
@@ -23,7 +23,7 @@ type Starship {
 type Query {
   characters: [Character!]!
   character(id: Int!): Character!
-  pickRandomCharacter(limit: Int): Character!
+  pickRandomCharacters(limit: Int): [Character!]!
   starships: [Starship!]!
   starship(id: Int!): Starship!
   pickRandomStarships(limit: Int): [Starship!]!
@@ -42,7 +42,7 @@ input CreateCharacterInput {
   name: String!
   height: Int!
   mass: Int!
-  gender: String!
+  iq: Int!
   imageUrl: String!
 }
 
@@ -50,7 +50,7 @@ input UpdateCharacterInput {
   name: String
   height: Int
   mass: Int
-  gender: String
+  iq: Int
   imageUrl: String
   id: Int!
 }

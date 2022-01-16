@@ -19,8 +19,8 @@ export class CharactersResolver {
     return this.charactersService.findOne(id);
   }
 
-  @Query(() => Character)
-  pickRandomCharacter(
+  @Query(() => [Character])
+  pickRandomCharacters(
     @Args('limit', { type: () => Int, nullable: true }) limit: number,
   ): Promise<Character[]> {
     return this.charactersService.pickRandom(limit);

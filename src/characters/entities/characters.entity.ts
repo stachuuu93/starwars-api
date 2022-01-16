@@ -21,8 +21,8 @@ export class Character {
   mass: number;
 
   @Column()
-  @Field()
-  gender: 'male' | 'female';
+  @Field(() => Int)
+  iq: number;
 
   @Column()
   @Field()
