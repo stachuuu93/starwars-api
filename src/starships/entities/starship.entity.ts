@@ -23,4 +23,8 @@ export class Starship {
   @Column()
   @Field(() => Int)
   crew: number;
+
+  @Column()
+  @Field()
+  imageUrl: string;
 }

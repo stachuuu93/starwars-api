@@ -1,5 +1,5 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
-import { IsNotEmpty, IsPositive } from 'class-validator';
+import { IsNotEmpty, IsPositive, IsUrl } from 'class-validator';
 
 @InputType()
 export class CreateStarshipInput {
@@ -18,4 +18,8 @@ export class CreateStarshipInput {
   @IsPositive()
   @Field(() => Int)
   crew: number;
+
+  @IsUrl()
+  @Field()
+  imageUrl: string;
 }

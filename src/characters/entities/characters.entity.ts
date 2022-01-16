@@ -23,4 +23,8 @@ export class Character {
   @Column()
   @Field()
   gender: 'male' | 'female';
+
+  @Column()
+  @Field()
+  imageUrl: string;
 }

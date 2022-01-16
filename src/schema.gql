@@ -8,6 +8,7 @@ type Character {
   height: Int!
   mass: Int!
   gender: String!
+  imageUrl: String!
 }
 
 type Starship {
@@ -16,6 +17,7 @@ type Starship {
   length: Int!
   cargoCapacity: Int!
   crew: Int!
+  imageUrl: String!
 }
 
 type Query {
@@ -41,6 +43,7 @@ input CreateCharacterInput {
   height: Int!
   mass: Int!
   gender: String!
+  imageUrl: String!
 }
 
 input UpdateCharacterInput {
@@ -48,6 +51,7 @@ input UpdateCharacterInput {
   height: Int
   mass: Int
   gender: String
+  imageUrl: String
   id: Int!
 }
 
@@ -56,6 +60,7 @@ input CreateStarshipInput {
   length: Int!
   cargoCapacity: Int!
   crew: Int!
+  imageUrl: String!
 }
 
 input UpdateStarshipInput {
@@ -63,5 +68,6 @@ input UpdateStarshipInput {
   length: Int
   cargoCapacity: Int
   crew: Int
+  imageUrl: String
   id: Int!
 }

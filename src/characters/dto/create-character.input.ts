@@ -1,5 +1,11 @@
 import { Field, InputType, Int } from '@nestjs/graphql';
-import { IsAlphanumeric, IsIn, IsNotEmpty, IsPositive } from 'class-validator';
+import {
+  IsAlphanumeric,
+  IsIn,
+  IsNotEmpty,
+  IsPositive,
+  IsUrl,
+} from 'class-validator';
 
 @InputType()
 export class CreateCharacterInput {
@@ -18,4 +24,8 @@ export class CreateCharacterInput {
   @IsIn(['male', 'female'])
   @Field()
   gender: 'male' | 'female';
+
+  @IsUrl()
+  @Field()
+  imageUrl: string;
 }
