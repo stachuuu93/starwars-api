@@ -38,11 +38,11 @@ export class StarshipsService {
     return this.starshipsRepository.remove(starship);
   }
 
-  pickRandom(): Promise<Starship> {
+  pickRandom(limit = 1): Promise<Starship[]> {
     return this.starshipsRepository
       .createQueryBuilder()
       .orderBy('RANDOM()')
-      .limit(1)
-      .getOne();
+      .limit(limit)
+      .getMany();
   }
 }

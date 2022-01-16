@@ -21,10 +21,10 @@ type Starship {
 type Query {
   characters: [Character!]!
   character(id: Int!): Character!
-  pickRandomCharacter: Character!
+  pickRandomCharacter(limit: Int): Character!
   starships: [Starship!]!
   starship(id: Int!): Starship!
-  pickRandomStarship: Starship!
+  pickRandomStarships(limit: Int): [Starship!]!
 }
 
 type Mutation {

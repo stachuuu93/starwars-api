@@ -20,8 +20,10 @@ export class CharactersResolver {
   }
 
   @Query(() => Character)
-  pickRandomCharacter(): Promise<Character> {
-    return this.charactersService.pickRandom();
+  pickRandomCharacter(
+    @Args('limit', { type: () => Int, nullable: true }) limit: number,
+  ): Promise<Character[]> {
+    return this.charactersService.pickRandom(limit);
   }
 
   @Mutation(() => Character)

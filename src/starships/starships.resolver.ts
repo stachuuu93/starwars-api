@@ -25,9 +25,11 @@ export class StarshipsResolver {
     return this.starshipsService.findOne(id);
   }
 
-  @Query(() => Starship)
-  pickRandomStarship() {
-    return this.starshipsService.pickRandom();
+  @Query(() => [Starship])
+  pickRandomStarships(
+    @Args('limit', { type: () => Int, nullable: true }) limit: number,
+  ) {
+    return this.starshipsService.pickRandom(limit);
   }
 
   @Mutation(() => Starship)

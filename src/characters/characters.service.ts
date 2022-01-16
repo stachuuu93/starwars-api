@@ -39,11 +39,11 @@ export class CharactersService {
     return this.charactersRepository.remove(character);
   }
 
-  pickRandom(): Promise<Character> {
+  pickRandom(limit = 1): Promise<Character[]> {
     return this.charactersRepository
       .createQueryBuilder()
       .orderBy('RANDOM()')
-      .limit(1)
-      .getOne();
+      .limit(limit)
+      .getMany();
   }
 }
