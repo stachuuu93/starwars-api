@@ -8,18 +8,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CharactersModule } from './characters/characters.module';
 import { StarshipsModule } from './starships/starships.module';
+import DatabaseConfig from './database.config';
 
 @Module({
   imports: [
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: ':memory:',
-      entities: ['dist/**/*.entity.{ts,js}'],
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(DatabaseConfig()),
     CharactersModule,
     StarshipsModule,
   ],
